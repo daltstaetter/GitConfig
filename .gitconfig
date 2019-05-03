@@ -33,10 +33,13 @@
     added = green bold
     changed = yellow bold
     untracked = red bold
+[pull]
+    rebase = true
 [alias]
     c = commit
     cm = commit -m
     cms = commit -sm
+    csm = commit -sm
     ca = commit --amend
     ########
     a = add
@@ -53,6 +56,9 @@
     undo-commit = reset --soft HEAD
     ########
     pullom = pull origin master
+    pull-merge = pull --no-rebase
+    pull-rb = pull --rebase
+    pull-rb-stash = pull --rebase --autostash
     ########
     pushom = push origin master
     pushreview = push origin HEAD:refs/for/master
