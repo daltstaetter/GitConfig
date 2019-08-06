@@ -60,6 +60,7 @@
     pull-merge = pull --no-rebase
     pull-rb = pull --rebase
     pull-rb-stash = pull --rebase --autostash
+    stash-unapply = !git stash show -p | git apply -R
     ########
     pushom = push origin master
     pushreview = push origin HEAD:refs/for/master
