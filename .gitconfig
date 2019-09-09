@@ -36,6 +36,7 @@
 [pull]
     rebase = true
 [alias]
+    st = status
     c = commit
     cm = commit -m
     cms = commit -sm
