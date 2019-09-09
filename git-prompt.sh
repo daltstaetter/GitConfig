@@ -41,6 +41,16 @@ else
 	PS1="$PS1"'$ '                 # prompt: always $
 fi
 
+# DA shows current state of repo
 MSYS2_PS1="$PS1"               # for detection by MSYS2 SDK's bash.basrc
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
+
+# DA 9/8/2019
+# https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-a-password-prompt#90869
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l > /dev/null || ssh-add
