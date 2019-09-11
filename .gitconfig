@@ -74,6 +74,7 @@
     mt = merge -X theirs
     ########
     f = fetch
+    fo = fetch origin
     ########
     st = status
     ########
