@@ -11,6 +11,7 @@
     excludesfile = ./.gitignore
     whitespace = cr-at-eol
     longpaths = true
+    safecrlf = false
 [diff]
     tool = meld
 [difftool]
